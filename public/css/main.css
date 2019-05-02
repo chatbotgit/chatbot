@@ -1,0 +1,86 @@
+ .login{
+	 background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+}
+.form-text-group{
+	
+	padding-top:5%;
+}
+
+.btn.btn-signin{
+	
+	background-color: rgb(104, 145, 162) !important;
+}
+
+.btn-primary{
+	border-color:rgb(104, 145, 162) !important;
+}
+
+.card-header{
+	font-weight:bold !important;
+}
+.container{
+	padding-top :5% !important;
+}
+.container_table .container {
+	
+	padding-top :5% !important;
+}
+.container-addleave{	
+	padding-top :2% !important;
+	padding-left :2% !important;
+}
+.leave-form{
+	padding-top :2% !important;	
+}
+.label-text{
+	text-align: left;
+	padding-left:3%
+}
+.lable-font{
+	font-weight:900;
+	line-height:0.5 !important;
+}
+.form-text{
+	width:90%;
+	margin-top:-6px  !important;	
+}
+
+.welcome{
+	color:white !important;
+	
+}
+.submit-button{
+	background-color :#43c160 !important;	
+	border-color: #43c160 !important;
+	font-weight: 800 !important;
+	width:90% !important;
+	font-size:18 px  !important;
+}
+.cancel{
+	background-color :#43c160 !important;	
+	border-color: #43c160 !important;
+	font-weight: 800 !important;
+	width:20% !important;
+	font-size:18 px  !important;
+	
+}
+.table-style{
+	background-color:azure;
+}
+.link{
+	color: #4a4645 !important;
+	font-weight :500 !important;
+}
+.leave-heading{
+ padding-left:35% !important;
+ font-size:22px  !important;
+ position:fixed;
+}
+.th-text{
+	font-weight : 600 !important;
+}
+.btnSelect{	
+	background-color :#43c160 !important;	
+	border-color: #43c160 !important;
+}

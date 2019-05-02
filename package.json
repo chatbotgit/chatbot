@@ -1,0 +1,22 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "actions-on-google": "^2.4.1",
+    "body-parser": "^1.18.3",
+    "dialogflow-fulfillment": "^0.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.3",
+	"node-datetime": "^2.1.2",
+    "npm": "^6.5.0",
+    "servicenow-rest-api": "^1.0.4",
+    "slack-notify": "^0.1.7"
+  }
+}
