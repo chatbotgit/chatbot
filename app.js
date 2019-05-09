@@ -7,8 +7,8 @@ app.use(bodyParser.json());
 var mongoose = require('mongoose');
 var leaveModel = require('./employee.model');
 
-var MY_SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
-var slack = require('slack-notify')(MY_SLACK_WEBHOOK_URL);
+var MY_SLACK_WEBHOOK_URL = "https://hooks.slack.com/services/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";
+var slacksend = require('slack-notify')(MY_SLACK_WEBHOOK_URL);
 
 app.use('/public', express.static(__dirname + "/public"));
 app.get('/', function (req, res) {
@@ -17,9 +17,9 @@ app.get('/', function (req, res) {
     });
     return res.redirect('public/login.html')
 });
-/**Start Print system date using javascript*/
+/**Start Print system date using javascript*/  
 
-function getsystemdate() {
+function getsystemdate() {   
     now = new Date();
     year = "" + now.getFullYear();
     month = "" + (now.getMonth() + 1);
@@ -106,7 +106,8 @@ app.post('/employees', (req, res) => {
     res.json({            
         message: "record Ins`erted"
     })
-   slack.send({
+	console.log("test data....")
+   slacksend.send({
         channel: '#notifications',
         text:  'Leave for ' +req.body.empname +' ('+ req.body.emp_id +') is created successfully with start date ' +start_date,		
         username: "Amrita"
@@ -120,7 +121,7 @@ app.post('/employees', (req, res) => {
         if (err) throw err;
         console.log("1 document updated");
     });
-      slack.send({
+      slacksend.send({
         channel: '#notifications',
         text: 'Leave for ' +req.body.empname +' with start date '+req.body.l_start_date+' is updated successfully with status Apporved',
         //username: req.body.empname
@@ -234,7 +235,7 @@ app.post('/chatbot', (req, response) => {
                 response.send(JSON.stringify({ "fulfillmentText": "Employee name: " + data[0].name + " leave start date is: " + data[0].start_date + " and Status is " + data[0].leave_status }));
             });
             break;
-			/**search leave list for pending status in lob */
+		/**search leave list for pending status in lob */
         case "pendingemployeelist":
            leaveModel.find({ "leave_status": "Pending" }, function (err, data) {
                 response.setHeader('Content-Type', 'application/json');
@@ -257,6 +258,7 @@ app.post('/chatbot', (req, response) => {
                 response.send(JSON.stringify({ "fulfillmentText": "Employee id:" + req.body.queryResult.parameters.empid +"with start date "+req.body.queryResult.parameters.startdate+ " is apporved successfully." }));
             });
             break;
+		/**Delete leave from lob using uniqueid */
 			case "deleteleave":
             var myquery = { _id: req.body.queryResult.parameters.leaveid };
             leaveModel.remove(myquery, function (err, obj) {
